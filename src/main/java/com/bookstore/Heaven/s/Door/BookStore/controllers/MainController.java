@@ -26,4 +26,10 @@ public class MainController {
         return "authers";
     }
 
+    @GetMapping("/nani")
+    public String nani(Model model) {
+        model.addAttribute("title", "Nani?");
+        return "nani";
+    }
+
 }

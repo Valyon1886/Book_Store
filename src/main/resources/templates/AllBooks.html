@@ -16,6 +16,13 @@
 
 <div class="container mt-5">
     <h1>Все книги</h1>
+
+    <div th:each="el : ${library}" class = "alert alert-info mt-2">
+        <h3 th:text="${el.name}"></h3>
+        <p th:text="${el.author}"></p>
+        <p th:text="${el.description}"></p>
+        <a th:href="'/books/'+ ${el.id}">Подробнее</a>
+    </div>
 </div>
 
 
