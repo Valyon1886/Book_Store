@@ -6,25 +6,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Librarian {
+public class LibrarianInCart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String name, author, description;
     private String date;
 
-    public Librarian(Long id, String name, String author, String description, String date, int number) {
+    public LibrarianInCart() {
+    }
+
+    public LibrarianInCart(Long id, String name, String author, String description, String date, int number) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.description = description;
         this.date = date;
         this.number = number;
-    }
-
-    public Librarian() {
     }
 
     public Long getId() {
@@ -77,6 +76,9 @@ public class Librarian {
     public void setName(String name) {
         this.name = name;
     }
+
+
+
 
 
 }
