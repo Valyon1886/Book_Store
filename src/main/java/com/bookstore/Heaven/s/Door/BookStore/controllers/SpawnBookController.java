@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Controller
@@ -28,5 +30,14 @@ public class SpawnBookController {
         return "AllBooks";
     }
 
+    @GetMapping("/books/{id}")
+    public String BookDetails(@PathVariable(value = "id") Long id, Model model) {
+        model.addAttribute("title", "Подробнее");
+        Optional<Librarian> libra = libratianRepo.findById(id);
+        ArrayList<Librarian> res = new ArrayList<>();
+        libra.ifPresent(res::add);
+        model.addAttribute("library", res);
+        return "book-details";
+    }
 
 }

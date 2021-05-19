@@ -12,16 +12,17 @@ public class Librarian {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String name, author, description;
+    private String name, author, description, image;
     private String date;
 
-    public Librarian(Long id, String name, String author, String description, String date, int number) {
+    public Librarian(Long id, String name, String author, String description, String date, int number, String image) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.description = description;
         this.date = date;
         this.number = number;
+        this.image = image;
     }
 
     public Librarian() {
@@ -78,5 +79,11 @@ public class Librarian {
         this.name = name;
     }
 
+    public String getImage() {
+        return image;
+    }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
 }

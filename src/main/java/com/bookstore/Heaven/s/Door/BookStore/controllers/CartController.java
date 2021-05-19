@@ -33,7 +33,7 @@ public class CartController {
     @PostMapping("/Cart")
     public String AddToCart(@RequestParam Long id, @RequestParam String name,
                             @RequestParam String description, @RequestParam String author,
-                            @RequestParam String date, @RequestParam int number, Model model) {
+                            @RequestParam String date, @RequestParam int number, @RequestParam String image, Model model) {
         model.addAttribute("title", "Корзина");
         if(id == -1){
             librarianInCartRepo.deleteAll();
@@ -46,7 +46,7 @@ public class CartController {
             model.addAttribute("library", library);
         }
         else{
-            LibrarianInCart book = new LibrarianInCart(id, name, author, description, date, number);
+            LibrarianInCart book = new LibrarianInCart(id, name, author, description, date, number, image);
             librarianInCartRepo.save(book);
             Iterable<LibrarianInCart> library = librarianInCartRepo.findAll();
             model.addAttribute("library", library);

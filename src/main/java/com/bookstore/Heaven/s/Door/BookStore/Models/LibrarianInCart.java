@@ -11,19 +11,21 @@ public class LibrarianInCart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name, author, description;
+
+    private String name, author, description, image;
     private String date;
 
-    public LibrarianInCart() {
-    }
-
-    public LibrarianInCart(Long id, String name, String author, String description, String date, int number) {
+    public LibrarianInCart(Long id, String name, String author, String description, String date, int number, String image) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.description = description;
         this.date = date;
         this.number = number;
+        this.image = image;
+    }
+
+    public LibrarianInCart() {
     }
 
     public Long getId() {
@@ -77,8 +79,11 @@ public class LibrarianInCart {
         this.name = name;
     }
 
+    public String getImage() {
+        return image;
+    }
 
-
-
-
+    public void setImage(String image) {
+        this.image = image;
+    }
 }

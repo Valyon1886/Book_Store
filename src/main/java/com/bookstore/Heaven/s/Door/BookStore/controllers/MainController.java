@@ -7,10 +7,10 @@ import com.bookstore.Heaven.s.Door.BookStore.repo.LibratianRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Optional;
 //import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -37,6 +37,12 @@ public class MainController {
     @GetMapping("/authers")
     public String who(Model model) {
         model.addAttribute("title", "Авторы");
+        Iterable<Librarian> library = libratianRepo.findAll();
+        //ArrayList<String> av = new ArrayList<String>();
+
+        String[] av = new String[] {"Абдул Альхазред", "Пьетро ди Абано", "*не указано*", "Маккензи Бэкон", "Гонориус Фиванский"};
+
+        model.addAttribute("library", av);
         return "authers";
     }
 
@@ -58,7 +64,7 @@ public class MainController {
         //List<Customer> result = customerService.search(keyword);
         Iterable<Librarian> library1 = libratianRepo.search(search);
         model.addAttribute("library", library1);
-        return "AllBooks";
+        return "search";
     }
 
     @PostMapping("/Thanks")
@@ -69,7 +75,16 @@ public class MainController {
         librarianInCartRepo.deleteAll();
         Iterable<LibrarianInCart> library = librarianInCartRepo.findAll();
         model.addAttribute("library", library);
-
         return "Thanks";
     }
+
+    @GetMapping("/authers/{author}")
+    public String AllBookOfAuthor(@PathVariable(value = "author") String author, Model model) {
+        model.addAttribute("title", author);
+        Iterable<Librarian> library1 = libratianRepo.search(author);
+        model.addAttribute("library", library1);
+        return "book-author";
+    }
+
+
 }
