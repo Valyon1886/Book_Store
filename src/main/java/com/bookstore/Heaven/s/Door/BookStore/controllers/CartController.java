@@ -2,8 +2,10 @@ package com.bookstore.Heaven.s.Door.BookStore.controllers;
 
 import com.bookstore.Heaven.s.Door.BookStore.Models.Librarian;
 import com.bookstore.Heaven.s.Door.BookStore.Models.LibrarianInCart;
+import com.bookstore.Heaven.s.Door.BookStore.Models.User;
 import com.bookstore.Heaven.s.Door.BookStore.repo.LibrarianInCartRepo;
 import com.bookstore.Heaven.s.Door.BookStore.repo.LibratianRepo;
+import com.bookstore.Heaven.s.Door.BookStore.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,11 +14,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Controller
 public class CartController {
     @Autowired
-    private LibratianRepo libratianRepo;
+    private UserRepo UserRepo;
     @Autowired
     private LibrarianInCartRepo librarianInCartRepo;
 
@@ -54,7 +57,30 @@ public class CartController {
 
         return "Cart";
     }
+/*
+    @GetMapping("/reg")
+    public String Registration(Model model){
+        model.addAttribute("title", "Представьтесь");
+        Iterable<LibrarianInCart> library = librarianInCartRepo.findAll();
+        model.addAttribute("library", library);
+        return "reg";
+    }
 
+ */
+
+    @PostMapping("/Thanks")
+    public String addUser(@RequestParam String name,
+                          @RequestParam String phone, Model model){
+        model.addAttribute("title", "Представьтесь");
+        String books = librarianInCartRepo.findAll().stream().map(LibrarianInCart::getName)
+                .collect(Collectors.joining(", "));
+
+        User user1 = new User(name, phone, books);
+
+        UserRepo.save(user1);
+        librarianInCartRepo.deleteAll();
+        return "Thanks";
+    }
 
 
 
