@@ -62,8 +62,8 @@ public class MainController {
     public String SearchBook(@RequestParam String search, Model model) {
         model.addAttribute("title", "Результат поиска");
         Iterable<Librarian> library1 = libratianRepo.search(search);
-        Librarian l = new Librarian(6L, "Маккензи Бэкон", "1899", "«По записям безумца» в деталях описывает тексты больного из приюта, который потратил 2 года в палате на то, чтобы заполнить каждый сантиметр огромного дневника своими дикими размышлениями и безумными стихами.", "По записям безумца", 1, "/img/forbooksfront/mad.png");
-        library1.equals(l);
+        //Librarian l = new Librarian(6L, "Маккензи Бэкон", "1899", "«По записям безумца» в деталях описывает тексты больного из приюта, который потратил 2 года в палате на то, чтобы заполнить каждый сантиметр огромного дневника своими дикими размышлениями и безумными стихами.", "По записям безумца", 1, "/img/forbooksfront/mad.png");
+        //library1.equals(l);
         model.addAttribute("library", library1);
         return "search";
     }
@@ -72,7 +72,7 @@ public class MainController {
     public String AddToCart(@RequestParam Long id, @RequestParam String name,
                             @RequestParam String description, @RequestParam String author,
                             @RequestParam String date, @RequestParam int number, Model model) {
-        model.addAttribute("title", "Корзина");
+        model.addAttribute("title", "Авторизация");
 
         Iterable<LibrarianInCart> library = librarianInCartRepo.findAll();
         model.addAttribute("library", library);

@@ -71,7 +71,7 @@ public class CartController {
     @PostMapping("/Thanks")
     public String addUser(@RequestParam String name,
                           @RequestParam String phone, Model model){
-        model.addAttribute("title", "Представьтесь");
+        model.addAttribute("title", "Спасибо за покупку!");
         String books = librarianInCartRepo.findAll().stream().map(LibrarianInCart::getName)
                 .collect(Collectors.joining(", "));
 
