@@ -5,6 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * Таблица - содержит информацию о книгах, добавленных в корзину
+ */
+
 @Entity
 public class LibrarianInCart {
 

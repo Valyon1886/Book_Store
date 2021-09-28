@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.persistence.*;
 import java.util.List;
 
-
+/**
+ * Таблица - содержит информацию о заказах
+ */
 
 @Entity
 public class User{

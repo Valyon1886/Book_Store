@@ -12,6 +12,10 @@ repositories {
 	mavenCentral()
 }
 
+javadoc {
+	options.encoding = 'UTF-8'
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -26,7 +30,9 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 }
-
+/*
 test {
 	useJUnitPlatform()
 }
+*/
+

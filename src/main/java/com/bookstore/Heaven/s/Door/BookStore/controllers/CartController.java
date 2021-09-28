@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Контроллер для добавления\удаления\отображения книг в корзине
+ */
+
 @Controller
 public class CartController {
     @Autowired
@@ -23,7 +27,9 @@ public class CartController {
     @Autowired
     private LibrarianInCartRepo librarianInCartRepo;
 
-
+    /**
+     * Отображает корзину
+     */
 
     @GetMapping("/Cart")
     public String LookingInCart(Model model) {
@@ -32,6 +38,10 @@ public class CartController {
         model.addAttribute("library", library);
         return "Cart";
     }
+
+    /**
+     * Логика кнопок в "корзине"
+     */
 
     @PostMapping("/Cart")
     public String AddToCart(@RequestParam Long id, @RequestParam String name,
@@ -67,7 +77,9 @@ public class CartController {
     }
 
  */
-
+    /**
+     * Запись заказа и перенапровление на экран "Спасибо за покупку"
+     */
     @PostMapping("/Thanks")
     public String addUser(@RequestParam String name,
                           @RequestParam String phone, Model model){
