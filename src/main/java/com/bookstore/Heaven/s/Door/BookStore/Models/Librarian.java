@@ -12,6 +12,16 @@ import javax.persistence.Id;
 @Entity
 public class Librarian {
 
+    /**
+     *  @param id Идентификатор (Primary key)
+     *  @param name Наименование книги
+     *  @param description Описание
+     *  @param author Имя автора книги
+     *  @param date Дата написания книги
+     *  @param number Унифицированый номер
+     *  @param image Адрес изображения
+     */
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

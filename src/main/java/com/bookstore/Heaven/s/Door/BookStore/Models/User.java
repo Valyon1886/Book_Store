@@ -14,6 +14,13 @@ import java.util.List;
 @Entity
 public class User{
 
+    /**
+     *  @param id Идентификатор (Primary key)
+     *  @param name Имя/Фамилия/Отчество/Иной идентификатор пользователя
+     *  @param phone Мобильный телефон пользователя
+     *  @param myLibrary Список (названия) книг купленных пользователем
+     */
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

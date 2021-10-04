@@ -29,6 +29,8 @@ public class CartController {
 
     /**
      * Отображает корзину
+     * @param model Шаблон интернет страницы
+     * @return Cart.html Страница с корзиной
      */
 
     @GetMapping("/Cart")
@@ -41,6 +43,15 @@ public class CartController {
 
     /**
      * Логика кнопок в "корзине"
+     * @param id Идентификатор (Primary key)
+     * @param name Наименование книги
+     * @param description Описание
+     * @param author Имя автора книги
+     * @param date Дата написания книги
+     * @param number Унифицированый номер
+     * @param image Адрес изображения
+     * @param model Шаблон интернет страницы
+     * @return Cart.html Страница с корзиной
      */
 
     @PostMapping("/Cart")
@@ -79,6 +90,10 @@ public class CartController {
  */
     /**
      * Запись заказа и перенапровление на экран "Спасибо за покупку"
+     * @param name логин пользователя
+     * @param phone контактный телефон пользователя
+     * @param model Шаблон интернет страницы
+     * @return Thanks.html Страница с благодарностью
      */
     @PostMapping("/Thanks")
     public String addUser(@RequestParam String name,

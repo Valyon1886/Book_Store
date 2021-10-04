@@ -27,6 +27,8 @@ public class SpawnBookController {
 
     /**
      * Метод возвращает список книг
+     * @param model Шаблон интернет страницы
+     * @return AllBooks.html Страница с всеми книгами в базе данных
      */
     @GetMapping("/books")
     public String SpawnBook(Model model) {
@@ -38,6 +40,9 @@ public class SpawnBookController {
 
     /**
      * Метод отображает страницу с подробной информацией о книге
+     * @param id Идентификатор книги
+     * @param model Шаблон интернет страницы
+     * @return book-details.html Страница с подробным описанием книги
      */
     @GetMapping("/books/{id}")
     public String BookDetails(@PathVariable(value = "id") Long id, Model model) {

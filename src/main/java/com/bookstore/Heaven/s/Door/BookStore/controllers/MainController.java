@@ -28,6 +28,8 @@ public class MainController {
 
     /**
      * Отображает домашнюю страницу сайта
+     * @param model Шаблон интернет страницы
+     * @return home.html Страница домашняя
      */
 
     @GetMapping("/home")
@@ -38,6 +40,8 @@ public class MainController {
 
     /**
      * Пасхалка (Why you glory my lord?)
+     * @param model Шаблон интернет страницы
+     * @return home.html Страница домашняя
      */
     @GetMapping("/home/wygml")                                                                                                   //Why you glory my lord?
     public String lord(Model model) {
@@ -47,6 +51,8 @@ public class MainController {
 
     /**
      * Отображает список авторов книг
+     * @param model Шаблон интернет страницы
+     * @return authers.html Страница со всеми авторами книг
      */
     @GetMapping("/authers")
     public String who(Model model) {
@@ -62,6 +68,8 @@ public class MainController {
 
     /**
      * Пасхалка Nani?
+     * @param model Шаблон интернет страницы
+     * @return nani.html Страница отсылочная
      */
 
     @GetMapping("/home/nani")
@@ -72,6 +80,8 @@ public class MainController {
 
     /**
      * Экран оповещающий о совершении покупки
+     * @param model Шаблон интернет страницы
+     * @return Thanks.html Страница с благодарностью
      */
 
     @GetMapping("/Thanks")
@@ -83,6 +93,9 @@ public class MainController {
 
     /**
      * Функция поиска по каталогу с книгами
+     * @param search Поисковое выражение
+     * @param model Шаблон интернет страницы
+     * @return search.html Страница с результатом поиска
      */
 
     @RequestMapping("/search")
@@ -97,6 +110,14 @@ public class MainController {
 
     /**
      * Функция добавления в корзину
+     * @param id Идентификатор (Primary key)
+     * @param name Наименование книги
+     * @param description Описание
+     * @param author Имя автора книги
+     * @param date Дата написания книги
+     * @param number Унифицированый номер
+     * @param model Шаблон интернет страницы
+     * @return reg.html Страница - авторизации
      */
 
     @PostMapping("/reg")
@@ -113,6 +134,9 @@ public class MainController {
 
     /**
      * Выводит все книги автора
+     * @param author Фамилия/Имя/Отчество/иной_идентификатор автора
+     * @param model Шаблон интернет страницы
+     * @return book-author.html Страница со всеми книгами автора
      */
 
     @GetMapping("/authers/{author}")
