@@ -242,6 +242,12 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">@GetMapping("/books")
 public&nbsp;java.lang.String&nbsp;SpawnBook&#8203;(org.springframework.ui.Model&nbsp;model)</pre>
 <div class="block">Метод возвращает список книг</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>model</code> - Шаблон интернет страницы</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>AllBooks.html Страница с всеми книгами в базе данных</dd>
+</dl>
 </li>
 </ul>
 <a id="BookDetails(java.lang.Long,org.springframework.ui.Model)">
@@ -255,6 +261,13 @@ public&nbsp;java.lang.String&nbsp;BookDetails&#8203;(@PathVariable("id")
                                     java.lang.Long&nbsp;id,
                                     org.springframework.ui.Model&nbsp;model)</pre>
 <div class="block">Метод отображает страницу с подробной информацией о книге</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>id</code> - Идентификатор книги</dd>
+<dd><code>model</code> - Шаблон интернет страницы</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>book-details.html Страница с подробным описанием книги</dd>
+</dl>
 </li>
 </ul>
 </li>

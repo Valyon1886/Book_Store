@@ -291,6 +291,12 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">@GetMapping("/home")
 public&nbsp;java.lang.String&nbsp;greeting&#8203;(org.springframework.ui.Model&nbsp;model)</pre>
 <div class="block">Отображает домашнюю страницу сайта</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>model</code> - Шаблон интернет страницы</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>home.html Страница домашняя</dd>
+</dl>
 </li>
 </ul>
 <a id="lord(org.springframework.ui.Model)">
@@ -302,6 +308,12 @@ public&nbsp;java.lang.String&nbsp;greeting&#8203;(org.springframework.ui.Model&n
 <pre class="methodSignature">@GetMapping("/home/wygml")
 public&nbsp;java.lang.String&nbsp;lord&#8203;(org.springframework.ui.Model&nbsp;model)</pre>
 <div class="block">Пасхалка (Why you glory my lord?)</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>model</code> - Шаблон интернет страницы</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>home.html Страница домашняя</dd>
+</dl>
 </li>
 </ul>
 <a id="who(org.springframework.ui.Model)">
@@ -313,6 +325,12 @@ public&nbsp;java.lang.String&nbsp;lord&#8203;(org.springframework.ui.Model&nbsp;
 <pre class="methodSignature">@GetMapping("/authers")
 public&nbsp;java.lang.String&nbsp;who&#8203;(org.springframework.ui.Model&nbsp;model)</pre>
 <div class="block">Отображает список авторов книг</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>model</code> - Шаблон интернет страницы</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>authers.html Страница со всеми авторами книг</dd>
+</dl>
 </li>
 </ul>
 <a id="nani(org.springframework.ui.Model)">
@@ -324,6 +342,12 @@ public&nbsp;java.lang.String&nbsp;who&#8203;(org.springframework.ui.Model&nbsp;m
 <pre class="methodSignature">@GetMapping("/home/nani")
 public&nbsp;java.lang.String&nbsp;nani&#8203;(org.springframework.ui.Model&nbsp;model)</pre>
 <div class="block">Пасхалка Nani?</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>model</code> - Шаблон интернет страницы</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>nani.html Страница отсылочная</dd>
+</dl>
 </li>
 </ul>
 <a id="thanks(org.springframework.ui.Model)">
@@ -335,6 +359,12 @@ public&nbsp;java.lang.String&nbsp;nani&#8203;(org.springframework.ui.Model&nbsp;
 <pre class="methodSignature">@GetMapping("/Thanks")
 public&nbsp;java.lang.String&nbsp;thanks&#8203;(org.springframework.ui.Model&nbsp;model)</pre>
 <div class="block">Экран оповещающий о совершении покупки</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>model</code> - Шаблон интернет страницы</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Thanks.html Страница с благодарностью</dd>
+</dl>
 </li>
 </ul>
 <a id="SearchBook(java.lang.String,org.springframework.ui.Model)">
@@ -348,6 +378,13 @@ public&nbsp;java.lang.String&nbsp;SearchBook&#8203;(@RequestParam
                                    java.lang.String&nbsp;search,
                                    org.springframework.ui.Model&nbsp;model)</pre>
 <div class="block">Функция поиска по каталогу с книгами</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>search</code> - Поисковое выражение</dd>
+<dd><code>model</code> - Шаблон интернет страницы</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>search.html Страница с результатом поиска</dd>
+</dl>
 </li>
 </ul>
 <a id="AddToCart(java.lang.Long,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,org.springframework.ui.Model)">
@@ -371,6 +408,18 @@ public&nbsp;java.lang.String&nbsp;AddToCart&#8203;(@RequestParam
                                   int&nbsp;number,
                                   org.springframework.ui.Model&nbsp;model)</pre>
 <div class="block">Функция добавления в корзину</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>id</code> - Идентификатор (Primary key)</dd>
+<dd><code>name</code> - Наименование книги</dd>
+<dd><code>description</code> - Описание</dd>
+<dd><code>author</code> - Имя автора книги</dd>
+<dd><code>date</code> - Дата написания книги</dd>
+<dd><code>number</code> - Унифицированый номер</dd>
+<dd><code>model</code> - Шаблон интернет страницы</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>reg.html Страница - авторизации</dd>
+</dl>
 </li>
 </ul>
 <a id="AllBookOfAuthor(java.lang.String,org.springframework.ui.Model)">
@@ -384,6 +433,13 @@ public&nbsp;java.lang.String&nbsp;AllBookOfAuthor&#8203;(@PathVariable("author")
                                         java.lang.String&nbsp;author,
                                         org.springframework.ui.Model&nbsp;model)</pre>
 <div class="block">Выводит все книги автора</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>author</code> - Фамилия/Имя/Отчество/иной_идентификатор автора</dd>
+<dd><code>model</code> - Шаблон интернет страницы</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>book-author.html Страница со всеми книгами автора</dd>
+</dl>
 </li>
 </ul>
 </li>

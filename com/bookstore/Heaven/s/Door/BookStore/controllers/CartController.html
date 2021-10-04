@@ -257,6 +257,12 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">@GetMapping("/Cart")
 public&nbsp;java.lang.String&nbsp;LookingInCart&#8203;(org.springframework.ui.Model&nbsp;model)</pre>
 <div class="block">Отображает корзину</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>model</code> - Шаблон интернет страницы</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Cart.html Страница с корзиной</dd>
+</dl>
 </li>
 </ul>
 <a id="AddToCart(java.lang.Long,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String,org.springframework.ui.Model)">
@@ -282,6 +288,19 @@ public&nbsp;java.lang.String&nbsp;AddToCart&#8203;(@RequestParam
                                   java.lang.String&nbsp;image,
                                   org.springframework.ui.Model&nbsp;model)</pre>
 <div class="block">Логика кнопок в "корзине"</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>id</code> - Идентификатор (Primary key)</dd>
+<dd><code>name</code> - Наименование книги</dd>
+<dd><code>description</code> - Описание</dd>
+<dd><code>author</code> - Имя автора книги</dd>
+<dd><code>date</code> - Дата написания книги</dd>
+<dd><code>number</code> - Унифицированый номер</dd>
+<dd><code>image</code> - Адрес изображения</dd>
+<dd><code>model</code> - Шаблон интернет страницы</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Cart.html Страница с корзиной</dd>
+</dl>
 </li>
 </ul>
 <a id="addUser(java.lang.String,java.lang.String,org.springframework.ui.Model)">
@@ -297,6 +316,14 @@ public&nbsp;java.lang.String&nbsp;addUser&#8203;(@RequestParam
                                 java.lang.String&nbsp;phone,
                                 org.springframework.ui.Model&nbsp;model)</pre>
 <div class="block">Запись заказа и перенапровление на экран "Спасибо за покупку"</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - Логин пользователя</dd>
+<dd><code>phone</code> - Контактный телефон пользователя</dd>
+<dd><code>model</code> - Шаблон интернет страницы</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Thanks.html Страница с благодарностью</dd>
+</dl>
 </li>
 </ul>
 </li>
