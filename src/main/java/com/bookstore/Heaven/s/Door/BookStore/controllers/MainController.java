@@ -13,6 +13,10 @@ import java.util.ArrayList;
 import java.util.Optional;
 //import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * Главный класс-контроллер в основном отвечает за межстраничную навигацию
+ */
+
 @Controller
 public class MainController {
 
@@ -22,18 +26,34 @@ public class MainController {
     @Autowired
     private LibrarianInCartRepo librarianInCartRepo;
 
+    /**
+     * Отображает домашнюю страницу сайта
+     * @param model Шаблон интернет страницы
+     * @return home.html Страница домашняя
+     */
+
     @GetMapping("/home")
     public String greeting(Model model) {
         model.addAttribute("title", "Главная страница");
         return "home";
     }
 
+    /**
+     * Пасхалка (Why you glory my lord?)
+     * @param model Шаблон интернет страницы
+     * @return home.html Страница домашняя
+     */
     @GetMapping("/home/wygml")                                                                                                   //Why you glory my lord?
     public String lord(Model model) {
         model.addAttribute("title", "Добро пожаловать в Ад");
         return "home";
     }
 
+    /**
+     * Отображает список авторов книг
+     * @param model Шаблон интернет страницы
+     * @return authers.html Страница со всеми авторами книг
+     */
     @GetMapping("/authers")
     public String who(Model model) {
         model.addAttribute("title", "Авторы");
@@ -46,17 +66,37 @@ public class MainController {
         return "authers";
     }
 
+    /**
+     * Пасхалка Nani?
+     * @param model Шаблон интернет страницы
+     * @return nani.html Страница отсылочная
+     */
+
     @GetMapping("/home/nani")
     public String nani(Model model) {
         model.addAttribute("title", "Nani?");
         return "nani";
     }
 
+    /**
+     * Экран оповещающий о совершении покупки
+     * @param model Шаблон интернет страницы
+     * @return Thanks.html Страница с благодарностью
+     */
+
     @GetMapping("/Thanks")
     public String thanks(Model model) {
         model.addAttribute("title", "Спасибо за покупку!");
         return "Thanks";
     }
+
+
+    /**
+     * Функция поиска по каталогу с книгами
+     * @param search Поисковое выражение
+     * @param model Шаблон интернет страницы
+     * @return search.html Страница с результатом поиска
+     */
 
     @RequestMapping("/search")
     public String SearchBook(@RequestParam String search, Model model) {
@@ -67,6 +107,18 @@ public class MainController {
         model.addAttribute("library", library1);
         return "search";
     }
+
+    /**
+     * Функция добавления в корзину
+     * @param id Идентификатор (Primary key)
+     * @param name Наименование книги
+     * @param description Описание
+     * @param author Имя автора книги
+     * @param date Дата написания книги
+     * @param number Унифицированый номер
+     * @param model Шаблон интернет страницы
+     * @return reg.html Страница - авторизации
+     */
 
     @PostMapping("/reg")
     public String AddToCart(@RequestParam Long id, @RequestParam String name,
@@ -80,6 +132,12 @@ public class MainController {
     }
 
 
+    /**
+     * Выводит все книги автора
+     * @param author Фамилия/Имя/Отчество/иной_идентификатор автора
+     * @param model Шаблон интернет страницы
+     * @return book-author.html Страница со всеми книгами автора
+     */
 
     @GetMapping("/authers/{author}")
     public String AllBookOfAuthor(@PathVariable(value = "author") String author, Model model) {

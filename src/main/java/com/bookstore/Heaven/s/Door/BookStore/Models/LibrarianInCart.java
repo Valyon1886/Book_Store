@@ -5,8 +5,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * Таблица - содержит информацию о книгах, добавленных в корзину
+ */
+
 @Entity
 public class LibrarianInCart {
+
+    /**
+     *  @param id Идентификатор (Primary key)
+     *  @param name Наименование книги
+     *  @param description Описание
+     *  @param author Имя автора книги
+     *  @param date Дата написания книги
+     *  @param number Унифицированый номер
+     *  @param image Адрес изображения
+     */
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
